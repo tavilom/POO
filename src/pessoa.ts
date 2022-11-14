@@ -8,7 +8,7 @@ export abstract class Pessoa {
   protected _estadoCivil = "";
   public _cancaco: number = 0;
 
-  constructor(nome: string, cpf: string)
+  constructor(nome: string, cpf: string, cancaco: number)
    {}
 
   public falar(aluno: Pessoa): void {
@@ -21,6 +21,9 @@ export abstract class Pessoa {
   public get nome(): string {
     return this._nome;
   }
-}
 
+  public get cancaco(): number {
+    return this._cancaco;
+  }
+}
 
