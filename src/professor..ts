@@ -5,4 +5,7 @@ export class Professor {
   private _estadoCivil!: String
   private _salario!: Number
   private _titulacao!: String
+
+  constructor(nome: string) {}
+
 }

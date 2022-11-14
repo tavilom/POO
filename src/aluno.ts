@@ -1,9 +1,10 @@
 import {Pessoa} from './pessoa'
 
-export class Aluno extends Pessoa {
+export abstract class Aluno extends Pessoa {
+  constructor(nome: string, cpf: string) {
+    super(nome + "aluno", cpf + "123.456.789-12")
+  }
   protected _turma!: String;
 }
 
-falar(): string {
-  return 'Cheguei'
-}
+public get falar()
