@@ -1,35 +1,32 @@
-import { Aluno } from "./aluno";
-import { Professor } from "./professor.";
+import {Pessoa} from './pessoa'
+import { Util } from './util';
 
-export abstract class Pessoa {
-  protected _nome: string = "";
-  protected _cpf: string = "";
-  protected _endereco: string = "";
-  protected _estadoCivil = "";
-  protected _vigor: number = 100;
-  protected _cancaco: number = 0;
-  
-
-  constructor(nome: string, cpf: string, vigor: number ,cancaco: number)
-   {}
-
-  public abstract falar(pessoa: Pessoa): void;
-
-  public abstract correr(pessoa: Pessoa): void;
-
-  public abstract perna(pessoa: Pessoa): void;
-
-  public get cpf(): string {
-    return this._cpf
-  } 
-  public get nome(): string {
-    return this._nome;
+export abstract class Aluno extends Pessoa {
+  constructor(nome: string, cpf: string) {
+    super(nome + "aluno", cpf + "123.456.789-12", 100, 0)
+    this._vigor = this._cancaco
   }
-  public get vigor(): number {
-    return this._vigor;
+  protected _turma!: String;
+
+  public falar(): void {
+    console.log(`${this._nome} Bom dia! Estou pronto para o treinamento de hoje.`);
   }
-  public get cancaco(): number {
-    return this._cancaco;
+
+  public correr(aluno: Pessoa): void{
+    this._vigor -= Math.random();
+    this._cancaco += Math.random();
+     if(this._cancaco > this._vigor) {
+      console.log("Você passou mal");
+     } else {
+      if (this._vigor > this._cancaco) {
+        console.log("Cardio completo!");
+      }
+     }
   }
+
+  public perna(aluno: Pessoa): void {
+
+      
+  }
+
 }
-
