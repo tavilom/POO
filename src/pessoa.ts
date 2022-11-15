@@ -6,14 +6,18 @@ export abstract class Pessoa {
   protected _cpf: string = "";
   protected _endereco: string = "";
   protected _estadoCivil = "";
-  public _cancaco: number = 0;
+  protected _vigor: number = 100;
+  protected _cancaco: number = 0;
+  
 
-  constructor(nome: string, cpf: string, cancaco: number)
+  constructor(nome: string, cpf: string, vigor: number ,cancaco: number)
    {}
 
-  public falar(aluno: Pessoa): void {
-    console.log(`${this._nome} Cheguei para meu treino Professor `)
-  }
+  public abstract falar(pessoa: Pessoa): void;
+
+  public abstract correr(pessoa: Pessoa): void;
+
+  public abstract perna(pessoa: Pessoa): void;
 
   public get cpf(): string {
     return this._cpf
@@ -21,7 +25,9 @@ export abstract class Pessoa {
   public get nome(): string {
     return this._nome;
   }
-
+  public get vigor(): number {
+    return this._vigor;
+  }
   public get cancaco(): number {
     return this._cancaco;
   }
