@@ -1,5 +1,5 @@
 import { Aluno } from "./aluno";
-import { Professor } from "./professor.";
+import { Professor } from "./professor."; //há necessidade deste import??
 
 export abstract class Pessoa {
   protected _nome: string = "";
@@ -7,10 +7,11 @@ export abstract class Pessoa {
   protected _endereco: string = "";
   protected _estadoCivil = "";
   protected _vigor: number = 100;
-  protected _cancaco: number = 0;
+  protected _cansaco: number = 0;
+  protected _musculo: number = 100;
   
 
-  constructor(nome: string, cpf: string, vigor: number ,cancaco: number)
+  constructor(nome: string, cpf: string, vigor: number ,cansaco: number, musculo: number)
    {}
 
   public abstract falar(pessoa: Pessoa): void;
@@ -28,8 +29,11 @@ export abstract class Pessoa {
   public get vigor(): number {
     return this._vigor;
   }
-  public get cancaco(): number {
-    return this._cancaco;
+  public get cansaco(): number {
+    return this._cansaco;
+  }
+
+  public get musculo(): number {
+    return this._musculo;
   }
 }
-
